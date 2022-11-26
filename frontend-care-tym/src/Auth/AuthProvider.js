@@ -42,10 +42,11 @@ export const AuthProvider = ({ children }) => {
             }else if(decode.rol === "medical_center"){
                 return history("/center/")
             }else if(decode.rol === "patient"){
-                console.log(data.data_user)
                 const data_user = data.data_user
                 sessionStorage.setItem("data_patient", JSON.stringify(data_user))
                 return history("/schedule/")
+            }else if(decode.rol === "doctor"){
+                return history("/medic")
             }
 
         }

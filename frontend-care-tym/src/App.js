@@ -21,6 +21,7 @@ import LoginSchedule from "./Page/LoginSchedule";
 import Register from "./Views/Schedule/Register";
 import Schedule from "./Views/Schedule/Schedule";
 import MedicalHours from "./Views/Schedule/MedicalHours";
+import MedicAdmin from "./Page/MedicAdmin";
 
 export default function App() {
     return (
@@ -50,6 +51,8 @@ export default function App() {
                             <Route path="/center/specialty" element={<Specialty/>}/>
                             <Route path="/center/coordinator" element={<Coordinator/>}/>
                         </Route>
+
+                        <Route path="/medic" element={<MedicAdmin/>}/>
 
                         <Route path="/:id" element={<LoginSchedule/>}/>
                         <Route path="/register/:rut" element={<Register/>}/>

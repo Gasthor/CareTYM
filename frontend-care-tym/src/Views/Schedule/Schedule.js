@@ -41,7 +41,6 @@ export default function Schedule() {
         const getCenters = async () => {
             setCenters(await getRequest(process.env.REACT_APP_URL+"/api/patient/available_centers/" + data_chain.id))
             setLoadingCenter(false)
-            console.log(formatDate)
         }
         getCenters()
 
