@@ -22,6 +22,7 @@ import Register from "./Views/Schedule/Register";
 import Schedule from "./Views/Schedule/Schedule";
 import MedicalHours from "./Views/Schedule/MedicalHours";
 import MedicAdmin from "./Page/MedicAdmin";
+import Patient from "./Page/Patient";
 
 export default function App() {
     return (
@@ -53,6 +54,8 @@ export default function App() {
                         </Route>
 
                         <Route path="/medic" element={<MedicAdmin/>}/>
+
+                        <Route path="/patient" element={<Patient/>}/>
 
                         <Route path="/:id" element={<LoginSchedule/>}/>
                         <Route path="/register/:rut" element={<Register/>}/>

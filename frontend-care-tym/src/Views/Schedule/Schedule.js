@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
+import Patient from "../../Page/Patient"
 import { getRequest, postRequest } from "../../Services/Request"
 
 export default function Schedule() {
@@ -39,8 +40,13 @@ export default function Schedule() {
 
     useEffect(() => {
         const getCenters = async () => {
-            setCenters(await getRequest(process.env.REACT_APP_URL+"/api/patient/available_centers/" + data_chain.id))
-            setLoadingCenter(false)
+            if(data_chain){
+                setCenters(await getRequest(process.env.REACT_APP_URL+"/api/patient/available_centers/" + data_chain.id))
+                setLoadingCenter(false)
+            }else{
+                history("/patient")
+            }
+            
         }
         getCenters()
 
@@ -95,10 +101,11 @@ export default function Schedule() {
         if (submit.isConfirmed) {
             const resp = await postRequest(process.env.REACT_APP_URL+"/api/patient/my_attentions/", JSON.stringify({ "medicRut": medic, "patientRut": data_user.rut, "date": selectDate, "startTime": block[0], "estimatedEnd": block[1] }))
             if (resp.status === 200) {
-                Swal.fire({
+                await Swal.fire({
                     title: "Hora agendada, se envio una copia a su correo electronico.",
                     icon: "success"
                 })
+                window.location.reload(true)
             } else {
                 Swal.fire({
                     title: "Error al agendar la hora, intente nuevamente, si el problema persiste contacte al centro medico.",
@@ -118,26 +125,7 @@ export default function Schedule() {
         <div className="flex justify-center">
             <div className="m-2 flex-col ">
 
-                <button className="bg-blue-600 p-3 rounded-xl shadow-lg font-medium text-white my-2 sm:m-4" onClick={()=>history("/medical-hours")}>Mis horas medicas</button>
-
-                <div className="mb-5 sm:mx-4 sm:w-[700px] py-5 px-2 bg-slate-50 rounded-xl shadow-lg flex flex-col justify-center">
-                    <h1 className="text-center text-xl font-medium mb-5">Datos del usuario</h1>
-                    <div className="grid grid-cols-2 sm:grid-cols-4">
-                        <h1 className="text-end mr-2 mb-2 font-medium">Nombre completo:</h1>
-                        <h1>{data_user.full_name}</h1>
-                        <h1 className="text-end mr-2 mb-2 font-medium">Rut:</h1>
-                        <h1>{data_user.rut}</h1>
-                        <h1 className="text-end mr-2 mb-2 font-medium">Fecha de nacimineto:</h1>
-                        <h1>{data_user.date_of_birth}</h1>
-                        <h1 className="text-end mr-2 mb-2 font-medium">Cobertura de salud:</h1>
-                        <h1>{data_user.health_coverage}</h1>
-                        <h1 className="text-end mr-2 mb-2 font-medium">Correo electronico:</h1>
-                        <h1>{data_user.email}</h1>
-                        <h1 className="text-end mr-2 mb-2 font-medium">Telefono:</h1>
-                        <h1>{data_user.phone}</h1>
-                    </div>
-                    <h1 className="text-center text-sm my-2">Recuerda que cualquier inconsistenca con los datos registrados debes llamar a un centro medico de la red CareTYM</h1>
-                </div>
+                <Patient/>
 
                 <div className="my-5 sm:mx-4 sm:w-[700px] p-5 bg-slate-50 rounded-xl shadow-lg flex flex-col justify-center">
                     <h1 className="text-center text-xl font-medium mb-5">Agendamiento de hora medica</h1>

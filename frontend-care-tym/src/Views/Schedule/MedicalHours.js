@@ -56,7 +56,7 @@ export default function MedicalHours() {
 
     return (
         <div className="flex justify-center">
-            <div className="my-5 sm:mx-4 sm:w-[700px] py-5 px-2 bg-slate-50 rounded-xl shadow-lg flex flex-col justify-center">
+            <div className="my-5 mx-1 sm:w-[700px] w-screen py-5 px-2 bg-slate-50 rounded-xl shadow-lg flex flex-col justify-center">
                 <div className="flex flex-row mb-5">
                 <button className="ml-2 mr-5" onClick={()=>history(-1)}>
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
