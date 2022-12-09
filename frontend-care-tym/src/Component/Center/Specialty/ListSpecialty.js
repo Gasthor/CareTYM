@@ -38,7 +38,7 @@ export default function ListSpecialty(props) {
             const resp = await deleteRequest(process.env.REACT_APP_URL+"/api/center/specialty/" + x.id)
             if (resp.status === 200) {
                 Swal.fire({
-                    title: x.rut + " eliminado con exito!",
+                    title: "Eliminado con exito!",
                     icon: "success"
                 })
                 const deleteData = data.filter(data => data.name !== x.name)
