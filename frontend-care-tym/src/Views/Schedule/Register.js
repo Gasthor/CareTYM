@@ -39,7 +39,7 @@ export default function Register() {
             const resp = await postRequest(process.env.REACT_APP_URL+"/api/auth/create_account", JSON.stringify(data))
             setLoading(false)
             if (resp.status === 200) {
-                await Swal.fire("Accion exitosa", "Medico creado exitosamente!!", "success")
+                await Swal.fire("Accion exitosa", "Registrado exitosamente!!", "success")
                 window.location.reload(true)
             } else {
                 document.getElementById("error").innerHTML = "Error al procesar los datos."
@@ -69,9 +69,6 @@ export default function Register() {
 
                     <label className="my-2 block font-medium">Sexo</label>
                     <input className="bg-gray-100 border border-gray-500 rounded-lg shadow-lg block w-full p-2.5" value={sex} onChange={(e)=> setSex(e.target.value)}/>
-
-                    <label className="my-2 block font-medium">Edad</label>
-                    <input type="number" className="bg-gray-100 border border-gray-500 rounded-lg shadow-lg block w-full p-2.5" value={age} onChange={(e)=> setAge(e.target.value)}/>
 
                     <label className="my-2 block font-medium">Fecha de nacimiento</label>
                     <input type="date" className="bg-gray-100 border border-gray-500 rounded-lg shadow-lg block w-full p-2.5" value={date} onChange={(e)=> setDate(e.target.value)}/>

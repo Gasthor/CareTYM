@@ -110,7 +110,7 @@ export default function MedicAdmin() {
 
                     <h1 className="text-center text-xl font-medium m-4">Administracion de bloque horarios</h1>
                     <div className="flex flex-row flex-wrap justify-center">
-                        <div className="m-2 p-2 border rounded-md border-black min-w-[250px]">
+                        <div className="m-2 p-2 border rounded-xl border-black min-w-[250px] ">
                             <h1 className="text-center font-medium text-lg">Lunes</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
@@ -133,7 +133,7 @@ export default function MedicAdmin() {
                             }
                         </div>
                         <div className="m-2 p-2 border rounded-md border-black min-w-[250px]">
-                            <h1 className="text-center font-medium">Martes</h1>
+                            <h1 className="text-center font-medium text-lg">Martes</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
                                     (
@@ -155,7 +155,7 @@ export default function MedicAdmin() {
                             }
                         </div>
                         <div className="m-2 p-2 border rounded-md  border-black min-w-[250px]">
-                            <h1 className="text-center font-medium">Miercoles</h1>
+                            <h1 className="text-center font-medium text-lg">Miercoles</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
                                     (
@@ -177,7 +177,7 @@ export default function MedicAdmin() {
                             }
                         </div>
                         <div className="m-2 p-2 border rounded-md border-black min-w-[250px]">
-                            <h1 className="text-center font-medium">Jueves</h1>
+                            <h1 className="text-center font-medium text-lg">Jueves</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
                                     (
@@ -199,7 +199,7 @@ export default function MedicAdmin() {
                             }
                         </div>
                         <div className="m-2 p-2 border rounded-md border-black min-w-[250px]">
-                            <h1 className="text-center font-medium">Viernes</h1>
+                            <h1 className="text-center font-medium text-lg">Viernes</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
                                     (
@@ -221,7 +221,7 @@ export default function MedicAdmin() {
                             }
                         </div>
                         <div className=" m-2 p-2 border rounded-md border-black min-w-[250px]">
-                            <h1 className="text-center font-medium">Sabado</h1>
+                            <h1 className="text-center font-medium text-lg">Sabado</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
                                     (
@@ -243,7 +243,7 @@ export default function MedicAdmin() {
                             }
                         </div>
                         <div className="m-2 p-2 border rounded-md border-black min-w-[250px]">
-                            <h1 className="text-center font-medium">Domingo</h1>
+                            <h1 className="text-center font-medium text-lg">Domingo</h1>
                             {
                                 loading ? (<p>Cargando...</p>) :
                                     (

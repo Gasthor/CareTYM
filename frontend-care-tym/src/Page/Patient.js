@@ -28,7 +28,7 @@ export default function Patient() {
                         <h1 className="text-end mr-2 mb-2 font-medium">Telefono:</h1>
                         <h1>{data_user.phone}</h1>
                     </div>
-                    <h1 className="text-center text-sm my-2">Recuerda que cualquier inconsistenca con los datos registrados debes llamar a un centro medico de la red CareTYM</h1>
+                    <h1 className="text-center text-sm my-2">Recuerda que cualquier inconsistencia con los datos registrados debes llamar a un centro medico de la red CareTYM</h1>
                 </div>
 
 
